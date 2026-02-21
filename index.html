@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Srihaas K N S Tadikonda | Portfolio</title>
+  <meta name="description" content="Srihaas K N S Tadikonda — Controls, Robotics, CV/ML Portfolio" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <div class="brand__dot"></div>
+        <div class="brand__name">Srihaas Tadikonda</div>
+      </div>
+
+      <nav class="nav">
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__card">
+        <div class="hero__left">
+          <h1>Srihaas K N S Tadikonda</h1>
+          <p class="hero__subtitle">Controls • Robotics • ML/CV • Embedded Systems</p>
+
+          <div class="hero__meta">
+            <span class="pill">📞 +1 732-470-5584</span>
+            <span class="pill">✉️ sri@tadikonda.co.in</span>
+            <span class="pill">🔗 linkedin.com/in/Srihaas</span>
+          </div>
+
+          <p class="hero__about">
+            I’m a Master’s student in Electrical & Computer Engineering with hands-on work in
+            UAV autonomy, motor design optimization, signal processing, and learning-based control.
+            This site showcases my experience and projects (with image carousels you can update later).
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">View Projects</a>
+            <a class="btn" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <div class="photo">
+            <!-- PHOTO PLACEHOLDER -->
+            <img src="assets/profile/profile.jpg" alt="Profile photo placeholder" />
+            <div class="photo__label">Photo Placeholder</div>
+          </div>
+
+          <div class="mini">
+            <div class="mini__title">Focus Areas</div>
+            <div class="tags">
+              <span class="tag">State-space</span>
+              <span class="tag">Kalman</span>
+              <span class="tag">Observers</span>
+              <span class="tag">LQR</span>
+              <span class="tag">MPC</span>
+              <span class="tag">Nonlinear</span>
+              <span class="tag">CNN</span>
+              <span class="tag">IRL</span>
+              <span class="tag">FEA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="section__head">
+        <h2>Education</h2>
+        <p>Academic background from my resume.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card">
+          <div class="card__top">
+            <h3>Rutgers University</h3>
+            <div class="muted">New Brunswick, NJ</div>
+          </div>
+          <div class="card__body">
+            <div class="row">
+              <div class="strong">Masters of Science in Electrical and Computer Engineering</div>
+              <div class="muted">Aug. 2024 – May 2026</div>
+            </div>
+            <div class="pill pill--soft">CGPA: 3.417</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__top">
+            <h3>Chaitanya Bharathi Institute of Technology (CBIT)</h3>
+            <div class="muted">Hyderabad, Telangana, India</div>
+          </div>
+          <div class="card__body">
+            <div class="row">
+              <div class="strong">B.Engg in Electrical and Electronics Engineering</div>
+              <div class="muted">Nov. 2020 – May 2024</div>
+            </div>
+            <div class="pill pill--soft">CGPA: 3.13</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section__head">
+        <h2>Experience</h2>
+        <p>Each role includes a carousel with placeholder result images.</p>
+      </div>
+
+      <div class="stack">
+
+        <!-- VTOL / Rutgers -->
+        <article class="card card--big">
+          <div class="card__top">
+            <div>
+              <h3>Graduate Research - Rutgers Swarm Intelligence Lab</h3>
+              <div class="muted">Rutgers University - New Brunswick, NJ</div>
+            </div>
+            <div class="muted">Nov 2024 – May 2025</div>
+          </div>
+
+          <div class="card__body split">
+            <div class="split__left">
+              <div class="carousel" data-carousel>
+                <button class="car__btn car__btn--left" data-prev aria-label="Previous image">‹</button>
+                <div class="car__viewport">
+                  <img class="car__img" src="assets/experience/vtol/1.jpg" alt="VTOL placeholder 1" />
+                  <img class="car__img" src="assets/experience/vtol/2.jpg" alt="VTOL placeholder 2" />
+                  <img class="car__img" src="assets/experience/vtol/3.jpg" alt="VTOL placeholder 3" />
+                </div>
+                <button class="car__btn car__btn--right" data-next aria-label="Next image">›</button>
+                <div class="car__dots" data-dots></div>
+              </div>
+            </div>
+
+            <div class="split__right">
+              <ul class="bullets">
+                <li>Engineered an autonomous VTOL drone using a hybrid 4+1 quadplane design, enhancing aerial mobility and stability.</li>
+                <li>Integrated GPS, camera, and onboard computer for intelligent navigation and real-time data capture.</li>
+                <li>Enabled wireless code deployment via SSH to Raspberry Pi, streamlining development cycles.</li>
+                <li>Developed a 3-layer CNN with 92% accuracy to classify overgrown vs. maintained vegetation on railway tracks, automatically flagging high-risk zones to prevent potential fire hazards.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">VTOL</span><span class="tag">Pixhawk</span><span class="tag">Raspberry Pi</span><span class="tag">SSH</span><span class="tag">CNN</span><span class="tag">Computer Vision</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- DRDO -->
+        <article class="card card--big">
+          <div class="card__top">
+            <div>
+              <h3>Research Intern</h3>
+              <div class="muted">Defense Research and Development Organization — Hyderabad, India</div>
+            </div>
+            <div class="muted">Oct 2023 – Feb 2024</div>
+          </div>
+
+          <div class="card__body split">
+            <div class="split__left">
+              <div class="carousel" data-carousel>
+                <button class="car__btn car__btn--left" data-prev aria-label="Previous image">‹</button>
+                <div class="car__viewport">
+                  <img class="car__img" src="assets/experience/drdo/1.jpg" alt="DRDO placeholder 1" />
+                  <img class="car__img" src="assets/experience/drdo/2.jpg" alt="DRDO placeholder 2" />
+                  <img class="car__img" src="assets/experience/drdo/3.jpg" alt="DRDO placeholder 3" />
+                </div>
+                <button class="car__btn car__btn--right" data-next aria-label="Next image">›</button>
+                <div class="car__dots" data-dots></div>
+              </div>
+            </div>
+
+            <div class="split__right">
+              <ul class="bullets">
+                <li>Applied Genetic Algorithms to fine-tune SRM design parameters, boosting motor performance and improving efficiency by 12% under variable loads.</li>
+                <li>Conducted FEA simulations (50+ scenarios) to analyze torque ripple and stress, reducing stress by 15%.</li>
+                <li>Investigated thermal energy harvesting using thermoelectric generators for military-grade power systems.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Genetic Algorithms</span><span class="tag">SRM</span><span class="tag">FEA</span><span class="tag">Optimization</span><span class="tag">Thermoelectrics</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- MathWorks -->
+        <article class="card card--big">
+          <div class="card__top">
+            <div>
+              <h3>Intern</h3>
+              <div class="muted">Mathworks Virtual Internship Program — Remote</div>
+            </div>
+            <div class="muted">May 2023 – Sept 2023</div>
+          </div>
+
+          <div class="card__body split">
+            <div class="split__left">
+              <div class="carousel" data-carousel>
+                <button class="car__btn car__btn--left" data-prev aria-label="Previous image">‹</button>
+                <div class="car__viewport">
+                  <img class="car__img" src="assets/experience/mathworks/1.jpg" alt="MathWorks placeholder 1" />
+                  <img class="car__img" src="assets/experience/mathworks/2.jpg" alt="MathWorks placeholder 2" />
+                  <img class="car__img" src="assets/experience/mathworks/3.jpg" alt="MathWorks placeholder 3" />
+                </div>
+                <button class="car__btn car__btn--right" data-next aria-label="Next image">›</button>
+                <div class="car__dots" data-dots></div>
+              </div>
+            </div>
+
+            <div class="split__right">
+              <ul class="bullets">
+                <li>Implemented the functions offered by MATLAB to visualize the stellar motion and redshift of a star.</li>
+                <li>Executed signal processing techniques to filter out noises, improving signal-to-noise ratio by 40% using MATLAB’s DSP toolboxes.</li>
+                <li>Exercised machine learning and deep learning techniques to train a model by using transfer learning techniques with an accuracy of 85%.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">MATLAB</span><span class="tag">DSP</span><span class="tag">Signal Processing</span><span class="tag">Transfer Learning</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FSAE -->
+        <article class="card card--big">
+          <div class="card__top">
+            <div>
+              <h3>Powertrain Member</h3>
+              <div class="muted">CBIT FSAE team — Hyd, India</div>
+            </div>
+            <div class="muted">Sept 2022 – May 2024</div>
+          </div>
+
+          <div class="card__body split">
+            <div class="split__left">
+              <div class="carousel" data-carousel>
+                <button class="car__btn car__btn--left" data-prev aria-label="Previous image">‹</button>
+                <div class="car__viewport">
+                  <img class="car__img" src="assets/experience/fsae/1.jpg" alt="FSAE placeholder 1" />
+                  <img class="car__img" src="assets/experience/fsae/2.jpg" alt="FSAE placeholder 2" />
+                  <img class="car__img" src="assets/experience/fsae/3.jpg" alt="FSAE placeholder 3" />
+                </div>
+                <button class="car__btn car__btn--right" data-next aria-label="Next image">›</button>
+                <div class="car__dots" data-dots></div>
+              </div>
+            </div>
+
+            <div class="split__right">
+              <ul class="bullets">
+                <li>Designed and integrated paddle-shifter mechanism to replace traditional stick shift, reducing driver gear change time.</li>
+                <li>Created a custom steering wheel housing via 3D printing to accommodate actuation hardware.</li>
+                <li>Calibrated the ECU to improve throttle response and ensure consistent engine performance during testing.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Powertrain</span><span class="tag">ECU</span><span class="tag">Mechanism Design</span><span class="tag">3D Printing</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section__head">
+        <h2>Projects</h2>
+        <p>Each project includes a carousel (placeholders now, real results later).</p>
+      </div>
+
+      <div class="stack">
+
+        <!-- IRL -->
+        <article class="card card--big">
+          <div class="card__top">
+            <div>
+              <h3>Reactive Collision Avoidance via IRL</h3>
+              <div class="muted">Inverse Problems, IRL, ELBO, BNNs, Gazebo</div>
+            </div>
+            <div class="muted">March – April 2025</div>
+          </div>
+
+          <div class="card__body split">
+            <div class="split__left">
+              <div class="carousel" data-carousel>
+                <button class="car__btn car__btn--left" data-prev aria-label="Previous image">‹</button>
+                <div class="car__viewport">
+                  <img class="car__img" src="assets/projects/irl/1.jpg" alt="IRL placeholder 1" />
+                  <img class="car__img" src="assets/projects/irl/2.jpg" alt="IRL placeholder 2" />
+                  <img class="car__img" src="assets/projects/irl/3.jpg" alt="IRL placeholder 3" />
+                </div>
+                <button class="car__btn car__btn--right" data-next aria-label="Next image">›</button>
+                <div class="car__dots" data-dots></div>
+              </div>
+            </div>
+
+            <div class="split__right">
+              <ul class="bullets">
+                <li>Developed an IRL framework with Bayesian Neural Networks to infer reward functions from expert demonstrations.</li>
+                <li>Applied IHT, PGD, and DIP-based recovery, reconstructing sparse signals with MSE &lt; 0.01.</li>
+                <li>For 30000 state-action pairs the Bayesian neural network is trained on 24000 transitions, validated on 3000, and tested on the remaining 3000.</li>
+                <li>On the unseen test set it attains mean-squared error 0.006, coefficient of determination R = 0.98.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">IRL</span><span class="tag">BNNs</span><span class="tag">ELBO</span><span class="tag">Gazebo</span><span class="tag">PGD</span><span class="tag">IHT</span><span class="tag">DIP</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Neurons -->
+        <article class="card card--big">
+          <div class="card__top">
+            <div>
+              <h3>Neurons as a direct data-driven controllers</h3>
+              <div class="muted">Willem’s Fundamental law, LQR, MATLAB</div>
+            </div>
+            <div class="muted">April 2025</div>
+          </div>
+
+          <div class="card__body split">
+            <div class="split__left">
+              <div class="carousel" data-carousel>
+                <button class="car__btn car__btn--left" data-prev aria-label="Previous image">‹</button>
+                <div class="car__viewport">
+                  <img class="car__img" src="assets/projects/neurons/1.jpg" alt="Neurons placeholder 1" />
+                  <img class="car__img" src="assets/projects/neurons/2.jpg" alt="Neurons placeholder 2" />
+                  <img class="car__img" src="assets/projects/neurons/3.jpg" alt="Neurons placeholder 3" />
+                </div>
+                <button class="car__btn car__btn--right" data-next aria-label="Next image">›</button>
+                <div class="car__dots" data-dots></div>
+              </div>
+            </div>
+
+            <div class="split__right">
+              <ul class="bullets">
+                <li>Simulated 100+ control steps modeling neurons as DD-DCs using 1-step LQR without system identification.</li>
+                <li>Derived control laws from 1,000+ spike data points using pseudoinverse and covariance-based methods.</li>
+                <li>Validated DD-DC model on 5+ biological datasets with &gt;90% accuracy in replicating neural dynamics.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Data-driven Control</span><span class="tag">LQR</span><span class="tag">MATLAB</span><span class="tag">Pseudoinverse</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Motors -->
+        <article class="card card--big">
+          <div class="card__top">
+            <div>
+              <h3>Axial and Radial Flux Motors</h3>
+              <div class="muted">Altair Flux, FluxMotor, FEA, Electric Motors</div>
+            </div>
+            <div class="muted">Aug 2023 – April 2024</div>
+          </div>
+
+          <div class="card__body split">
+            <div class="split__left">
+              <div class="carousel" data-carousel>
+                <button class="car__btn car__btn--left" data-prev aria-label="Previous image">‹</button>
+                <div class="car__viewport">
+                  <img class="car__img" src="assets/projects/motors/1.jpg" alt="Motors placeholder 1" />
+                  <img class="car__img" src="assets/projects/motors/2.jpg" alt="Motors placeholder 2" />
+                  <img class="car__img" src="assets/projects/motors/3.jpg" alt="Motors placeholder 3" />
+                </div>
+                <button class="car__btn car__btn--right" data-next aria-label="Next image">›</button>
+                <div class="car__dots" data-dots></div>
+              </div>
+            </div>
+
+            <div class="split__right">
+              <ul class="bullets">
+                <li>Designed and simulated radial and axial flux motors using Altair Flux, FluxMotor, and Ansys Maxwell, generating performance characteristic plots.</li>
+                <li>Conducted finite element analysis in Ansys Maxwell to study electromagnetic and thermal behavior under varying loads.</li>
+                <li>Compared designs and concluded that axial flux motors deliver higher power density, making them better suited for EV and wind turbine applications.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Altair Flux</span><span class="tag">FluxMotor</span><span class="tag">Ansys Maxwell</span><span class="tag">FEA</span><span class="tag">EM + Thermal</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section__head">
+        <h2>Technical Skills</h2>
+        <p>Directly from my resume.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card">
+          <h3>Controls</h3>
+          <div class="list">
+            <span class="pill pill--soft">State-space modeling</span>
+            <span class="pill pill--soft">Kalman filtering</span>
+            <span class="pill pill--soft">Observers</span>
+            <span class="pill pill--soft">LQR</span>
+            <span class="pill pill--soft">H∞</span>
+            <span class="pill pill--soft">MPC</span>
+            <span class="pill pill--soft">Nonlinear Control</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Languages</h3>
+          <div class="list">
+            <span class="pill pill--soft">MATLAB</span>
+            <span class="pill pill--soft">Python</span>
+            <span class="pill pill--soft">Linux</span>
+            <span class="pill pill--soft">Embedded C</span>
+            <span class="pill pill--soft">C#</span>
+            <span class="pill pill--soft">SAP ABAP</span>
+            <span class="pill pill--soft">HTML/CSS</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Softwares</h3>
+          <div class="list">
+            <span class="pill pill--soft">Simulink</span>
+            <span class="pill pill--soft">Raspbian</span>
+            <span class="pill pill--soft">MissionPlanner</span>
+            <span class="pill pill--soft">ArduPilot</span>
+            <span class="pill pill--soft">PX4 Autopilot</span>
+            <span class="pill pill--soft">Ansys Maxwell</span>
+            <span class="pill pill--soft">Altair Flux</span>
+            <span class="pill pill--soft">FluxMotor</span>
+            <span class="pill pill--soft">AutoCAD</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Libraries</h3>
+          <div class="list">
+            <span class="pill pill--soft">PyTorch</span>
+            <span class="pill pill--soft">TensorFlow</span>
+            <span class="pill pill--soft">NumPy</span>
+            <span class="pill pill--soft">Matplotlib</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="section__head">
+        <h2>Contact</h2>
+        <p>Quick ways to reach me.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card">
+          <h3>Email</h3>
+          <p class="muted">sri@tadikonda.co.in</p>
+          <a class="btn btn--primary" href="mailto:sri@tadikonda.co.in">Send Email</a>
+        </article>
+
+        <article class="card">
+          <h3>LinkedIn</h3>
+          <p class="muted">linkedin.com/in/Srihaas</p>
+          <a class="btn btn--primary" href="https://linkedin.com/in/Srihaas" target="_blank" rel="noreferrer">Open LinkedIn</a>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="muted">© <span id="year"></span> Srihaas K N S Tadikonda • Built from scratch (no themes)</div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
