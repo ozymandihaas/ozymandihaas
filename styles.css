@@ -277,20 +277,23 @@ body{
 
 /* ====== Photo ====== */
 .photo{
-  border-radius: var(--radius);
-  border: 1px solid var(--stroke);
-  background: rgba(255,255,255,0.04);
-  overflow:hidden;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid var(--stroke);
+  overflow: hidden;
   position: relative;
-  height: 240px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.05);
 }
+
 .photo img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   display:block;
-  filter: saturate(1.05);
 }
+
 .photo__label{
   position:absolute;
   left: 10px;
