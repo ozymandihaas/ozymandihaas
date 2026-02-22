@@ -176,10 +176,10 @@ body{
   border: 1px solid var(--stroke);
   background: var(--card);
   box-shadow: var(--shadow);
-  overflow:hidden;
 }
+
 .card--big{
-  padding: 14px;
+  padding: 20px;
 }
 .card__top{
   display:flex;
