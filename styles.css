@@ -404,3 +404,17 @@ body{
   .grid--2{ grid-template-columns: 1fr; }
   .hero__left h1{ font-size: 36px; }
 }
+
+/* ===== Education font tuning ===== */
+
+#education .card h3 {
+  font-size: 18px;
+}
+
+#education .strong {
+  font-size: 15px;
+}
+
+#education .muted {
+  font-size: 14px;
+}
