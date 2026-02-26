@@ -278,10 +278,84 @@
     <section id="projects" class="section">
       <div class="section__head">
         <h2>Projects</h2>
-        <p>Each project includes a carousel (placeholders now, real results later).</p>
+        <p>Projects I have worked on.</p>
       </div>
 
       <div class="stack">
+
+ <!-- CPS Final Project -->
+<article class="card card--big">
+  <div class="card__top">
+    <div>
+      <h3>CPS Final Project — STMD Neurons as Switched Systems with Dwell-Time Constraints</h3>
+      <div class="muted">ECE 519: Modelling of Cyber-Physical Systems • Switched/Hybrid Systems • Stability via Dwell Time</div>
+    </div>
+    <div class="muted">2025</div>
+  </div>
+
+  <div class="card__body split">
+    <!-- Carousel (placeholders for your figures: trajectories/switching/dwell-time plots) -->
+    <div class="split__left">
+      <div class="carousel" data-carousel>
+        <button class="car__btn car__btn--left" data-prev aria-label="Previous image">‹</button>
+        <div class="car__viewport">
+          <img class="car__img" src="assets/projects/cps/1.jpg" alt="CPS placeholder 1" />
+          <img class="car__img" src="assets/projects/cps/2.jpg" alt="CPS placeholder 2" />
+          <img class="car__img" src="assets/projects/cps/3.jpg" alt="CPS placeholder 3" />
+        </div>
+        <button class="car__btn car__btn--right" data-next aria-label="Next image">›</button>
+        <div class="car__dots" data-dots></div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="split__right">
+      <ul class="bullets">
+        <li>
+          Modeled Small-Target Motion Detector (STMD) selective attention as a <b>switching signal</b> in a multi-agent pursuit problem, forming a <b>continuous-time switched system with multiple equilibria</b>.
+        </li>
+        <li>
+          Connected optic-flow saliency to a winner-take-all selector:
+          <b>y<sub>STMD,1</sub> = max(Q̇(γ))</b> and <b>y<sub>STMD,2</sub> = arg max(Q̇(γ))</b>, which induces switching σ(t) between target-tracking modes.
+        </li>
+        <li>
+          Reproduced the paper’s qualitative stability trend by enforcing a <b>minimum dwell-time / ADT-style constraint</b> to prevent rapid switching (“chattering”).
+        </li>
+        <li>
+          <b>My contribution:</b> replaced the paper’s nonlinear unicycle model with a CPS-friendly <b>linear single-integrator pursuit model</b> while preserving STMD-style switching and dwell-time regulation.
+        </li>
+        <li>
+          Simulation setup (my model): <b>N = 5 agents</b>, <b>T = 30 s</b>, <b>Δt = 0.01 s</b>, gain <b>k = 0.5</b>, and dwell-time threshold <b>τ<sub>min</sub> = 1 s</b>.
+        </li>
+        <li>
+          Key results: dwell-time enforcement produced <b>smoother, more cohesive trajectories</b>, <b>longer mode-holding plateaus</b> in σ(t), and a <b>sawtooth dwell-time clock</b> that resets at each switch—confirming correct dwell-time implementation.
+        </li>
+      </ul>
+
+      <div class="tags">
+        <span class="tag">Switched Systems</span>
+        <span class="tag">Hybrid CPS</span>
+        <span class="tag">Dwell Time / ADT</span>
+        <span class="tag">STMD (Max/Argmax)</span>
+        <span class="tag">Multi-Agent</span>
+        <span class="tag">Stability</span>
+        <span class="tag">Simulation</span>
+      </div>
+
+      <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+        <!-- If you renamed files, use cps-final-report.pdf and cps-final-slides.pdf -->
+        <a class="btn btn--primary" href="cps-final-report.pdf" target="_blank" rel="noreferrer">Open Report (PDF)</a>
+        <a class="btn" href="cps-final-slides.pdf" target="_blank" rel="noreferrer">Open Slides (PDF)</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+        
 
         <!-- IRL -->
         <article class="card card--big">
