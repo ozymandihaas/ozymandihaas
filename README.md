@@ -36,4 +36,4 @@ I build autonomy systems that combine controls + perception + learning.
 ## 📫 Reach me
 - Email: sri@tadikonda.co.in
 - LinkedIn: [https://www.linkedin.com/in/srihaas-k-n-s-tadikonda-059836237/]
-- Resume: [link to pdf in this repo or a repo called resume]
+
