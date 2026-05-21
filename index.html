@@ -844,8 +844,8 @@ a { color: inherit; text-decoration: none; }
       </div>
     </div>
 
-    <!-- UGV + IRL side by side -->
-    <div class="proj-grid proj-grid--2" style="margin-bottom:2rem;">
+    <!-- #2: UGV -->
+    <div style="margin-bottom:2rem;">
       <div class="proj-card proj-card--featured">
         <div class="proj-media">
           <div class="carousel" id="carousel-ugv">
@@ -888,85 +888,285 @@ a { color: inherit; text-decoration: none; }
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- Course Projects Grid: #3–end -->
+    <div class="grid-3">
+
+      <!-- #3: DreamerV2 -->
       <div class="proj-card">
-        <div class="proj-media">
-          <div class="carousel" id="carousel-irl">
-            <div class="carousel__track" id="track-irl">
-              
-            </div>
-            <button class="carousel__btn carousel__btn--left" onclick="slideCarousel('track-irl','dots-irl',-1)">‹</button>
-            <button class="carousel__btn carousel__btn--right" onclick="slideCarousel('track-irl','dots-irl',1)">›</button>
-            <div class="carousel__dots" id="dots-irl">
-              <div class="carousel__dot carousel__dot--active" onclick="goToSlide('track-irl','dots-irl',0)"></div>
-              <div class="carousel__dot" onclick="goToSlide('track-irl','dots-irl',1)"></div>
-            </div>
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">Socially Cognizant Robotics</span>
+            <span class="proj-year">2024–2025</span>
+          </div>
+          <div class="proj-title">Empirical Robustness Evaluation of DreamerV2 — Dream to Control</div>
+          <div class="proj-subtitle">DreamerV2 · RSSM · Model-Based RL · Latent World Model · TensorFlow · CUDA</div>
+          <ul class="proj-bullets">
+            <li>Replicated DreamerV2 (RSSM-based latent world model, actor-critic trained via imagined rollouts) on DMC Cheetah Run and Atari Pong; achieved eval return 833.78 vs. reported 823, confirming reproducibility; resolved TF 2.16/CUDA 12.3/cuDNN 8.9.7 compatibility issues and ran training on NVIDIA RTX 4070/A4500 via SLURM.</li>
+            <li>Designed and executed 4 alternative evaluation experiments exposing structural failure modes: (1) DMC Reacher Hard — chaotic returns (0–963) over 880k steps due to sparse-reward local minima; (2) color shift (R=0.8, G=0.2, B=0.2) — 93.8% return collapse (905.8→56.4) from pixel reconstruction objective internalizing irrelevant color statistics; (3) gravity/friction perturbation — up to 74.8% return drop at 2× gravity, 47.8% at 2× friction, confirming RSSM physics overfitting; (4) Atari Pong action delay — single-frame delay collapsed win rate 100%→20% and mean return +21→−8.3 due to zero-delay RSSM assumption.</li>
+            <li>Finetuned pretrained Cheetah Run model under static background distraction for 2.57M steps, recovering to eval return 884.87, confirming domain adaptation requires full retraining rather than zero-shot generalization; authored social/ethical/political analysis grounding each failure mode in deployment risk under EU AI Act regulatory context.</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">DreamerV2</span><span class="tag-sm">RSSM</span>
+            <span class="tag-sm">Model-Based RL</span><span class="tag-sm">TensorFlow</span>
+            <span class="tag-sm">DMC</span><span class="tag-sm">Atari</span>
           </div>
         </div>
+      </div>
+
+      <!-- #4: STMD -->
+      <div class="proj-card">
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">ECE 519 · Cyber-Physical Systems</span>
+            <span class="proj-year">2025</span>
+          </div>
+          <div class="proj-title">STMD Neurons as Switched Systems with Dwell-Time Constraints</div>
+          <div class="proj-subtitle">Switched Systems · Dwell-Time · Hybrid CPS · Multi-Agent · Single-Integrator</div>
+          <ul class="proj-bullets">
+            <li>Modeled STMD-driven selective attention (Billah & Faruque, ACC 2022) as a discrete switching signal σ(t) over a 5-agent pursuit problem; replaced the paper's nonlinear unicycle kinematics with linear single-integrator dynamics ṗᵢ=uᵢ=−k(pᵢ−p_{σᵢ}), k=0.5, to isolate dwell-time stabilization from kinematic complexity while preserving mode-dependent equilibria and the winner-take-all STMD selection structure.</li>
+            <li>Implemented surrogate saliency Q_ij(t)=(‖Δr_ij‖+η)/(‖r_ij‖+ε) and argmax switching law σᵢ=argmax_j Q_ij; enforced minimum dwell-time constraint τ_min=1s preventing switches until t−t_last≥τ_min; simulated T=30s, Δt=0.01s with fixed random seed.</li>
+            <li>Quantified switching reduction under dwell-time regulation: switching signal exhibited clear mode-holding plateaus vs. rapid chattering in the unconstrained case; trajectories became smoother and more cohesive with dwell-time enforcement, consistent with paper's stability conclusions for switched systems with multiple equilibria.</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">Switched Systems</span><span class="tag-sm">Dwell-Time</span>
+            <span class="tag-sm">Hybrid CPS</span><span class="tag-sm">Multi-Agent</span>
+            <span class="tag-sm">STMD</span><span class="tag-sm">MATLAB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- #5: Nash RL -->
+      <div class="proj-card">
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">ECE · Reinforcement Learning</span>
+            <span class="proj-year">2025</span>
+          </div>
+          <div class="proj-title">Nash Equilibrium via Policy Iteration for Linear-Quadratic Differential Games</div>
+          <div class="proj-subtitle">Nash Equilibrium · Coupled Riccati Equations · Lyapunov Iterations · LQ Differential Games · MATLAB</div>
+          <ul class="proj-bullets">
+            <li>Formulated a 2-player continuous-time LQ differential game (4-state system, Jungers et al. 2007) with coupled cost functions J1, J2 incorporating cross-player penalty terms R12=0.5, R21=0.8; derived Nash equilibrium feedback laws u1=−R11⁻¹B1ᵀK1x, u2=−R22⁻¹B2ᵀK2x by solving coupled AREs via iterative Lyapunov equations on A_cl=A−S1K1−S2K2.</li>
+            <li>Implemented Nash-Lyapunov policy iteration algorithm: initialized K1, K2 via CARE, then iteratively solved K1=lyap(A_cl', −Q1_new) and K2=lyap(A_cl', −Q2_new) with Q_new updated using coupling matrices S1=B1R11⁻¹B1ᵀ, S2=B2R22⁻¹B2ᵀ, Z1, Z2; convergence criterion ‖ΔK‖_F &lt; 10⁻⁵ reached within 20 iterations.</li>
+            <li>Validated asymptotic stability via eigenvalues of A_cl (all negative real parts); all 4 state trajectories converged from x0=[0,0,0,1]ᵀ; tracked per-iteration costs J1 and J2 confirming monotonic decrease to Nash equilibrium values; confirmed neither player could unilaterally improve without degrading the other.</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">Nash Equilibrium</span><span class="tag-sm">Differential Games</span>
+            <span class="tag-sm">Policy Iteration</span><span class="tag-sm">Lyapunov Equations</span>
+            <span class="tag-sm">LQR</span><span class="tag-sm">MATLAB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- #6: IRL -->
+      <div class="proj-card">
         <div class="proj-content">
           <div class="proj-meta">
             <span class="proj-category">Graduate Project</span>
             <span class="proj-year">Mar – Apr 2025</span>
           </div>
           <div class="proj-title">Reactive Collision Avoidance via IRL</div>
-          <div class="proj-subtitle">Inverse Problems · BNNs · ELBO · PGD · IHT</div>
+          <div class="proj-subtitle">IRL · Bayesian Neural Networks · PPO · ELBO · PyGame · Ackermann Env</div>
           <ul class="proj-bullets">
-            <li>Developed IRL framework with Bayesian Neural Networks to infer reward functions from expert demonstrations.</li>
-            <li>Trained on 24,000 transitions; achieved MSE 0.006, R² = 0.98 on unseen test set of 3,000 state-action pairs.</li>
-            <li>Applied IHT, PGD, and DIP-based sparse signal recovery with MSE &lt; 0.01.</li>
+            <li>Replaced Deep Gaussian Processes with a fully-connected 64-64-1 Bayesian Neural Network (Pyro, AutoDiagonalNormal guide) for latent reward modeling from LIDAR data; trained via ELBO minimization (Adam, lr=1e-4, 1000 epochs, batch 256) on 24,000 state–action pairs — achieving <strong>R² = 0.986</strong> and test MSE = 0.006 on 3,000 held-out transitions.</li>
+            <li>Custom PyGame environment: 100×100m world, Ackermann kinematic bicycle model (L=2.5m, Δt=0.1s), 10-beam LIDAR (30m range), 20–30 random static obstacles; ~30,000 state–action pairs collected from 100 expert episodes.</li>
+            <li>PPO policy (SB3, 128-128 actor-critic, tanh) trained over 1M timesteps with a two-stage uncertainty curriculum: Stage 1 r = μ + 0.25σ (exploration), Stage 2 r = μ − 0.07σ (risk-averse), switching at 400k steps.</li>
           </ul>
           <div class="tags-row">
             <span class="tag-sm">IRL</span><span class="tag-sm">BNNs</span>
-            <span class="tag-sm">ELBO</span><span class="tag-sm">PGD</span><span class="tag-sm">IHT</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Course Projects Grid -->
-    <div class="grid-3">
-      <div class="proj-card">
-        <div class="proj-content">
-          <div class="proj-meta">
-            <span class="proj-category">ECE 519 · CPS</span>
-            <span class="proj-year">2025</span>
-          </div>
-          <div class="proj-title">STMD Neurons as Switched Systems</div>
-          <div class="proj-subtitle">Dwell-Time Constraints · Hybrid CPS · Multi-Agent</div>
-          <ul class="proj-bullets">
-            <li>Modeled STMD selective attention as a switching signal in a 5-agent pursuit problem using continuous-time switched systems.</li>
-            <li>Enforced minimum dwell-time constraints preventing chattering, producing smoother cohesive trajectories.</li>
-            <li>Replaced nonlinear unicycle model with CPS-friendly linear single-integrator while preserving STMD switching.</li>
-          </ul>
-          <div class="tags-row">
-            <span class="tag-sm">Switched Systems</span>
-            <span class="tag-sm">Dwell Time</span>
-            <span class="tag-sm">Multi-Agent</span>
+            <span class="tag-sm">PPO</span><span class="tag-sm">ELBO</span>
+            <span class="tag-sm">LIDAR</span><span class="tag-sm">PyGame</span>
+            <span class="tag-sm">Ackermann Env</span>
           </div>
         </div>
       </div>
 
+      <!-- #7: DD-DC -->
       <div class="proj-card">
         <div class="proj-content">
           <div class="proj-meta">
-            <span class="proj-category">Data-Driven Control</span>
+            <span class="proj-category">Data-Driven Control · Neuroscience</span>
             <span class="proj-year">Apr 2025</span>
           </div>
-          <div class="proj-title">Neurons as Data-Driven Controllers</div>
-          <div class="proj-subtitle">Willems' Fundamental Lemma · LQR · MATLAB</div>
+          <div class="proj-title">The Neuron as a Direct Data-Driven Controller</div>
+          <div class="proj-subtitle">DD-DC · Willems' Fundamental Lemma · One-Step LQR · ARMA · STDP</div>
           <ul class="proj-bullets">
-            <li>Simulated 100+ control steps modeling neurons as DD-DCs using 1-step LQR without system identification.</li>
-            <li>Derived control laws from 1,000+ spike data points via pseudoinverse and covariance-based methods.</li>
-            <li>Validated on 5+ biological datasets with &gt;90% accuracy replicating neural dynamics.</li>
+            <li>Analyzed and derived the DD-DC framework (Chklovski et al.) modeling neurons as feedback controllers of scalar linear systems (x_{t+1} = ax_t + bu_t); derived the closed-form one-step LQR synaptic weight w* = −a/b (r=0) and the pseudoinverse-based solution via Willems' Fundamental Lemma for the case where a, b are unknown.</li>
+            <li>Extended to nonzero control cost (r>0), showing the resulting w* aligns with the optimal LQR gain K = −ab/(b²+r/q) and provides a control-theoretic interpretation of STDP asymmetry via the cos(X̂X₊) term in the covariance formulation.</li>
+            <li>Simulated closed-loop DD-DC LQR with a parameter switch at t=25ms and state jolt Δx=0.2 at t=55ms, demonstrating rank-deficiency of the data matrix under constant input and restoration of persistence of excitation via injected noise η_t; validated filter adaptation (K_ff, K_fb) across 5 biological datasets (blowfly H1, mouse V1, salamander retina, Drosophila ORN, rat S1).</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">DD-DC</span><span class="tag-sm">Willems' Lemma</span>
+            <span class="tag-sm">LQR</span><span class="tag-sm">ARMA</span>
+            <span class="tag-sm">STDP</span><span class="tag-sm">Pseudoinverse</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">ECE 332:506 · Applied Controls</span>
+            <span class="proj-year">Spring 2025</span>
+          </div>
+          <div class="proj-title">Drone Yaw Angle PID &amp; Eigenvalue Assignment Control</div>
+          <div class="proj-subtitle">PID · Ziegler-Nichols · Filtered Derivative · Pole Placement · MATLAB/Simulink</div>
+          <ul class="proj-bullets">
+            <li>Designed PID controllers for the linearized drone yaw transfer function G_yaw(s) = 750/[s(s+0.7)(s+30)]; applied Ziegler-Nichols tuning (Gm=0.8596, ω_cp=4.5826 rad/s) to obtain Kp=0.5158, Ki=0.7523, Kd=0.0884, and evaluated approximate-derivative PID with filter parameter μ ∈ {10⁻⁵, 10⁻³, 10⁻¹} — peak overshoot increased from ~1.7 to ~1.82 as μ increased.</li>
+            <li>Implemented a filtered-derivative PID (n_f=10) with control law u = KpE(s) + Ki(1/s)E(s) − Kd·s/(K_d/n_f·s+1)·Y(s); reduced high-frequency noise amplification compared to the plain derivative case while maintaining comparable transient response.</li>
+            <li>Designed eigenvalue assignment controller via state-space representation (A_cl = A − BK), placing closed-loop poles at {−1±j, −4} using MATLAB place(); demonstrated faster settling and reduced overshoot relative to all PID variants across 3 pole-placement configurations.</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">PID</span>
+            <span class="tag-sm">Ziegler-Nichols</span>
+            <span class="tag-sm">Pole Placement</span>
+            <span class="tag-sm">MATLAB</span>
+            <span class="tag-sm">Simulink</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">ECE 332:506 · Applied Controls</span>
+            <span class="proj-year">Spring 2025</span>
+          </div>
+          <div class="proj-title">Eigenvalue Assignment &amp; LQ Optimal Control — Aircraft Longitudinal Dynamics</div>
+          <div class="proj-subtitle">LQR · Pole Placement · Prescribed Stability Margin · Integral Action · MATLAB/Simulink</div>
+          <ul class="proj-bullets">
+            <li>Applied pole placement (MATLAB place()) to a 4-state aircraft longitudinal model (states: airspeed, AoA, pitch angle, pitch rate; x0=[1,1,1,1]) with desired poles {−1.5±j, −2, −0.5}; designed feedforward gain N = −1/[C(A−BK)⁻¹B] for non-zero set-point tracking to θ_desired=5°, achieving settling time ~10s with overshoot ~0.2°.</li>
+            <li>Designed LQR controller minimizing J=∫(x'Qx + u'Ru)dt with Q=diag([0.1, 0.1, 10, 0.1]), R=1; computed K_lqr via algebraic Riccati equation and prescribed stability margin (α=2) by solving LQR on A_shifted=A+αI, reducing settling time from ~10s to ~6s with near-zero overshoot.</li>
+            <li>Augmented system with integral state ż = θ_desired − θ for disturbance rejection; designed LQR on 5-state augmented system with Q_aug=diag([0.1, 0.1, 10, 0.1, 100]), R=1; controller rejected a step disturbance of magnitude 0.5 applied at t=10s, restoring zero steady-state error within 3–5 seconds.</li>
           </ul>
           <div class="tags-row">
             <span class="tag-sm">LQR</span>
+            <span class="tag-sm">Pole Placement</span>
+            <span class="tag-sm">Riccati Equation</span>
+            <span class="tag-sm">Integral Control</span>
             <span class="tag-sm">MATLAB</span>
-            <span class="tag-sm">Pseudoinverse</span>
           </div>
         </div>
       </div>
 
+      <div class="proj-card">
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">ECE 332:506 · Applied Controls</span>
+            <span class="proj-year">Spring 2025</span>
+          </div>
+          <div class="proj-title">Full-Order &amp; Reduced-Order Observer Design with LQR</div>
+          <div class="proj-subtitle">Luenberger Observer · Reduced-Order Observer · LQR · CARE · Least-Squares Init · MATLAB/Simulink</div>
+          <ul class="proj-bullets">
+            <li>Designed full-order and reduced-order Luenberger observers for a 4-state LTI system (2 measured outputs: y1=x4, y2=x2; unmeasured: x1, x3) via pole placement on A' with observer poles at {−10, −20, −30, −40}; both zero and least-squares initial conditions converged to true states within ~2–5s with observation errors decaying to zero.</li>
+            <li>Combined full-order observer with LQR (Q=I₄, R=1, solved via CARE): theoretical optimal cost J_opt=4.0000, actual accumulated cost=45.0569, performance loss=41.0569 due to state estimation error propagating through the control law over the 10s simulation window.</li>
+            <li>Reduced-order observer (observer poles {−10, −12}, estimating x1 and x3 only) with LQR yielded performance loss=76.4108 for both zero and least-squares initializations, confirming that reduced-order estimation introduces greater uncertainty than full-order despite lower computational complexity.</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">Luenberger Observer</span>
+            <span class="tag-sm">Reduced-Order Observer</span>
+            <span class="tag-sm">LQR</span>
+            <span class="tag-sm">CARE</span>
+            <span class="tag-sm">MATLAB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">ECE 332:506 · Applied Controls</span>
+            <span class="proj-year">Spring 2025</span>
+          </div>
+          <div class="proj-title">Kalman Filter, LQG Optimal Control &amp; H∞ Robust Filtering</div>
+          <div class="proj-subtitle">Kalman Filter · LQG · H∞ Filter · Algebraic Riccati Equation · MATLAB/Simulink</div>
+          <ul class="proj-bullets">
+            <li>Designed a Kalman filter for a 2-state double integrator system (W=1, V=ρ=0.01); solved the filter ARE analytically to obtain Σ=[[0.0447, 0.1],[0.1, 0.4472]] and gain L=[4.4721, 10]ᵀ; reproduced LQG results (Q=diag([1,0]), R=ρ_c=0.05) yielding K=[4.4721, 2.9907], J_opt=0.1495; identified and corrected a textbook typo in Example 4.9, computing the correct total LQG cost J=0.5280 vs. the textbook's erroneous 0.4575/0.5357.</li>
+            <li>Implemented H∞ robust filter for the F-8 Crusader aircraft (4-state LTI, W=0.000315, V=diag([0.000686, 40])); solved the H∞ ARE via MATLAB icare/are with C₁=I₄; computed filter gain K_f=P_f·Cᵀ·V⁻¹ for γ ∈ {1.01, 2, 3.14, 69} and W ∈ {0.5, 1, 2}, V ∈ {I, 5I, 10I} — solutions infeasible for γ=0.5 across all weight combinations.</li>
+            <li>Observed that decreasing γ toward 1 drives H∞ filter behavior toward the Kalman filter; increasing V improved noise rejection at γ=1.01; larger γ produced more conservative estimates with higher residual noise — Kalman filter outperformed H∞ on matched-noise scenarios due to lower overshoot in state estimates.</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">Kalman Filter</span>
+            <span class="tag-sm">LQG</span>
+            <span class="tag-sm">H∞ Filter</span>
+            <span class="tag-sm">Riccati Equation</span>
+            <span class="tag-sm">MATLAB</span>
+            <span class="tag-sm">Simulink</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">ECE 332:506 · Applied Controls</span>
+            <span class="proj-year">Spring 2025</span>
+          </div>
+          <div class="proj-title">H∞ Optimal Robust Control &amp; Sliding Mode Control — Aircraft &amp; Helicopter</div>
+          <div class="proj-subtitle">H∞ Control · Sliding Mode Control · Utkin-Young · Unit Control · Optimal SMC · MATLAB/Simulink</div>
+          <ul class="proj-bullets">
+            <li>Designed an H∞ central controller (Q(s)=0, z(t)=y(t)) for the F-8 aircraft model (same 4-state LTI as Project 4); solved controller and observer AREs via MATLAB care/icare; swept γ ∈ {0.5, 0.7, 1, 15, 20, 25} — γ≤1 yielded instability/divergence, γ≥15 produced stable bounded outputs, γ=25 approached LQR-like performance with 1/γ²=0.0016 rendering the robustness penalty negligible.</li>
+            <li>Designed a sliding mode controller for the CH-47 helicopter (4-state, 2-input) using the Utkin-Young method; constructed transformation H=[N B]ᵀ from null(Bᵀ), partitioned into A11/A12 subystems, placed reduced-order poles at {−1, −4} via place(); computed sliding surface matrix G=[K I]H; validated s(0)=Gx₀ for x₀=[10,−5,7,4]ᵀ confirming large initial deviation from manifold.</li>
+            <li>Implemented unit control SMC (discontinuous law u=−pinv(GB)·GAx − σ·pinv(GB)·sign(Gx), σ=1000) in Simulink using Sign block; simulated over 50s showing reaching phase convergence; extended to optimal SMC by solving CARE on reduced-order system (Q=R=I₂), computing K_opt=R⁻¹A12ᵀS, reconstructing G_opt, and reporting closed-loop eigenvalues and optimal cost J_opt=trace(S).</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">H∞ Control</span>
+            <span class="tag-sm">Sliding Mode Control</span>
+            <span class="tag-sm">Utkin-Young</span>
+            <span class="tag-sm">Riccati Equation</span>
+            <span class="tag-sm">MATLAB</span>
+            <span class="tag-sm">Simulink</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">ECE 332:506 · Applied Controls</span>
+            <span class="proj-year">Spring 2025</span>
+          </div>
+          <div class="proj-title">H₂ Optimal Robust Controller Design — Aircraft Disturbance Rejection</div>
+          <div class="proj-subtitle">H₂ Control · Algebraic Riccati Equation · Observer-Based Control · Lyapunov · MATLAB</div>
+          <ul class="proj-bullets">
+            <li>Designed an H₂-optimal observer-based controller (z(t)=y(t)) for the same 4-state F-8 aircraft model (W=0.000315, V=diag([0.000686, 40])); solved controller ARE for P_c with C1=I₄ to obtain F=B2ᵀP_c, and dual ARE for P_o with B1·W·B1ᵀ noise shaping to obtain observer gain L=P_o·C2ᵀ.</li>
+            <li>Constructed 8-state augmented closed-loop system: A_cl=[[A−B2F, B2F],[0, A−LC2]], B_cl=[B1; 0], C_cl=[C2, 0]; simulated open-loop and closed-loop responses to unit white noise disturbance via lsim() — closed-loop showed significantly reduced oscillations and bounded output vs. high-sensitivity open-loop behavior.</li>
+            <li>Computed H₂ norm of closed-loop system as 25.4913 via both MATLAB norm(sys_cl,2) and independently via Lyapunov equation P satisfying A_cl·P + P·A_cl' + B_cl·B_cl'=0, then H₂=sqrt(trace(C_cl·P·C_cl')) — both methods yielded identical results, validating correctness of Riccati solutions and observer-controller gains.</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">H₂ Control</span>
+            <span class="tag-sm">Riccati Equation</span>
+            <span class="tag-sm">Lyapunov Equation</span>
+            <span class="tag-sm">Observer-Based Control</span>
+            <span class="tag-sm">MATLAB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comm Nets -->
+      <div class="proj-card">
+        <div class="proj-content">
+          <div class="proj-meta">
+            <span class="proj-category">ECE · Communications Networks</span>
+            <span class="proj-year">2025</span>
+          </div>
+          <div class="proj-title">Online Gaming Traffic Performance over WAN Bottleneck</div>
+          <div class="proj-subtitle">Queueing Theory · M/M/1/B · Mininet · UDP/TCP Contention · QoE</div>
+          <ul class="proj-bullets">
+            <li>Modeled a hierarchical access–WAN–server topology (20 Mbps bottleneck, 50-packet buffer, 92ms propagation RTT) using M/M/1/B queueing theory; derived service rate μ=19,531 pkt/s, gaming arrival rate λ_g=976.6 pkt/s; showed analytically that jitter grows as √(ρ/μ²(1−ρ)²) and packet loss as P_loss=(1−ρ)ρᴮ/(1−ρᴮ⁺¹), predicting rapid jitter increase before mean RTT changes.</li>
+            <li>Emulated two scenarios in Mininet: (A) 0/2/3 long-lived TCP background flows — jitter increased from 0.038ms (baseline) to 0.353ms at 2 flows, packet loss peaked at 0.25%; non-monotonic loss at 3 flows (0.055%) explained by TCP burst timing relative to gaming packet arrivals at buffer overflow events. (B) 100 short-burst UDP sessions (50KB, ~0.39s each, 0.1s gap) — typical jitter 0.02–0.08ms and 0% loss, but worst-case isolated bursts hit 17% packet loss and 1.7ms jitter from transient buffer overflow.</li>
+            <li>Confirmed that mean RTT (~92.5ms) remained stable across all contention scenarios, validating that RTT alone is insufficient as a QoE metric for gaming; jitter and packet loss under transient congestion are the dominant performance determinants for UDP-based real-time traffic.</li>
+          </ul>
+          <div class="tags-row">
+            <span class="tag-sm">Queueing Theory</span><span class="tag-sm">Mininet</span>
+            <span class="tag-sm">UDP/TCP</span><span class="tag-sm">M/M/1/B</span>
+            <span class="tag-sm">WAN</span><span class="tag-sm">QoE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Undergrad -->
       <div class="proj-card">
         <div class="proj-content">
           <div class="proj-meta">
@@ -991,66 +1191,6 @@ a { color: inherit; text-decoration: none; }
         </div>
       </div>
 
-      <div class="proj-card">
-        <div class="proj-content">
-          <div class="proj-meta">
-            <span class="proj-category">ECE · Coursework</span>
-            <span class="proj-year">2024–2025</span>
-          </div>
-          <div class="proj-title">Applied Controls — 6 Projects</div>
-          <div class="proj-subtitle">Observer Design · LQR · H∞ · MPC · Balanced Realizations</div>
-          <ul class="proj-bullets">
-            <li>Observer design (full/reduced order), LQ optimal control, H∞ robust control.</li>
-            <li>Balanced realizations, data-driven feedback design, model predictive control.</li>
-            <li>All 6 projects implemented and validated in MATLAB/Simulink with formal write-ups.</li>
-          </ul>
-          <div class="tags-row">
-            <span class="tag-sm">LQR</span><span class="tag-sm">H∞</span>
-            <span class="tag-sm">MPC</span><span class="tag-sm">Simulink</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-content">
-          <div class="proj-meta">
-            <span class="proj-category">ECE · RL</span>
-            <span class="proj-year">2025</span>
-          </div>
-          <div class="proj-title">Reinforcement Learning</div>
-          <div class="proj-subtitle">Policy Gradient · Value Methods · Deep RL</div>
-          <ul class="proj-bullets">
-            <li>Implemented and compared model-free RL algorithms including policy gradient and value-based methods.</li>
-            <li>Applied deep RL techniques to control and navigation tasks with performance benchmarking.</li>
-          </ul>
-          <div class="tags-row">
-            <span class="tag-sm">RL</span>
-            <span class="tag-sm">PyTorch</span>
-            <span class="tag-sm">Policy Gradient</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-content">
-          <div class="proj-meta">
-            <span class="proj-category">Socially Cognizant Robotics</span>
-            <span class="proj-year">2024–2025</span>
-          </div>
-          <div class="proj-title">Social Robot Navigation</div>
-          <div class="proj-subtitle">4 Milestones · Human-Aware Planning</div>
-          <ul class="proj-bullets">
-            <li>Four-milestone project covering socially aware robot navigation in human environments.</li>
-            <li>Implemented human-aware path planning, proxemics, and interaction-aware control.</li>
-            <li>Evaluated across static and dynamic social scenarios with quantitative metrics.</li>
-          </ul>
-          <div class="tags-row">
-            <span class="tag-sm">Social Robotics</span>
-            <span class="tag-sm">Path Planning</span>
-            <span class="tag-sm">HRI</span>
-          </div>
-        </div>
-      </div>
     </div>
 
   </div>
